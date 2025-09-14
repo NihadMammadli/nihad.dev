@@ -1,0 +1,30 @@
+{
+    "name": "nihad-dev-cv-game",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "description": "Interactive gamified CV website built with Phaser 3",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "serve": "vite preview --port 4173"
+    },
+    "packageManager": "yarn@1.22.22",
+    "devDependencies": {
+        "vite": "^5.0.0",
+        "@types/node": "^20.0.0"
+    },
+    "dependencies": {
+        "phaser": "^3.70.0"
+    },
+    "keywords": [
+        "phaser3",
+        "game",
+        "cv",
+        "portfolio",
+        "interactive"
+    ],
+    "author": "Nihad",
+    "license": "MIT"
+}
