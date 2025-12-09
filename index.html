@@ -1,93 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <meta name="description" content="Nihad's Interactive CV - A gamified portfolio experience" />
-    <title>Nihad.dev - Interactive CV Game</title>
-
-    <!-- Preconnect to external resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #000;
-            font-family: 'Courier New', monospace;
-            overflow: hidden;
-            touch-action: none;
-        }
-
-        #game-container {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        canvas {
-            image-rendering: pixelated;
-            image-rendering: -moz-crisp-edges;
-            image-rendering: crisp-edges;
-        }
-
-        /* Loading screen */
-        .loading-screen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            z-index: 1000;
-        }
-
-        .loading-text {
-            font-size: 18px;
-            margin-top: 20px;
-        }
-
-        .loading-bar {
-            width: 200px;
-            height: 4px;
-            background: #333;
-            border: 1px solid #fff;
-            margin-top: 10px;
-        }
-
-        .loading-progress {
-            height: 100%;
-            background: #fff;
-            width: 0%;
-            transition: width 0.3s;
-        }
-    </style>
-</head>
-
-<body>
-    <div id="game-container">
-        <div class="loading-screen" id="loading-screen">
-            <div>LOADING CV ADVENTURE...</div>
-            <div class="loading-bar">
-                <div class="loading-progress" id="loading-progress"></div>
-            </div>
-            <div class="loading-text" id="loading-text">Initializing...</div>
-        </div>
-    </div>
-    <script type="module" src="/src/main.js"></script>
-</body>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nihad.dev</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
