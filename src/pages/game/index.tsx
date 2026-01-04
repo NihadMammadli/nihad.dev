@@ -26,9 +26,9 @@ function Game() {
         // Draw 8x8 grid
         const graphics = this.add.graphics()
         graphics.lineStyle(2, 0x00ff00)
-        for (let i = 0; i <= 8; i++) {
-          graphics.lineBetween(i * cellSize, 0, i * cellSize, 400)
-          graphics.lineBetween(0, i * cellSize, 400, i * cellSize)
+        for (let i = 0; i <= 16; i++) {
+          graphics.lineBetween(i * cellSize, 0, i * cellSize, 800)
+          graphics.lineBetween(0, i * cellSize, 800, i * cellSize)
         }
 
         // Create player (circle)
@@ -41,11 +41,11 @@ function Game() {
       update() {
         if (Phaser.Input.Keyboard.JustDown(this.cursors.left) && this.gridX > 0) {
           this.gridX--
-        } else if (Phaser.Input.Keyboard.JustDown(this.cursors.right) && this.gridX < 7) {
+        } else if (Phaser.Input.Keyboard.JustDown(this.cursors.right) && this.gridX < 15) {
           this.gridX++
         } else if (Phaser.Input.Keyboard.JustDown(this.cursors.up) && this.gridY > 0) {
           this.gridY--
-        } else if (Phaser.Input.Keyboard.JustDown(this.cursors.down) && this.gridY < 7) {
+        } else if (Phaser.Input.Keyboard.JustDown(this.cursors.down) && this.gridY < 15) {
           this.gridY++
         }
 
@@ -57,8 +57,8 @@ function Game() {
 
     const config: Phaser.Types.Core.GameConfig = {
       type: Phaser.AUTO,
-      width: 400,
-      height: 400,
+      width: 800,
+      height: 800,
       parent: gameRef.current,
       scene: GameScene,
       backgroundColor: '#2d2d2d'
@@ -74,7 +74,6 @@ function Game() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>8x8 Grid Game</h1>
       <p className={styles.instructions}>Use arrow keys to move the red circle</p>
       <div ref={gameRef} className={styles.gameContainer} />
       <Link to="/" className={styles.backLink}>
