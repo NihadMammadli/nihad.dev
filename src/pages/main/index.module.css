@@ -1,0 +1,74 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  min-height: 3rem;
+  font-family: 'Geist Mono', monospace;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.content {
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.mainText {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.subText {
+  color: #666;
+}
+
+.linksContainer {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.link {
+  font-size: 1.1rem;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+
+.link:hover {
+  transform: scale(1.05);
+}
+
+.linkedIn {
+  background: #0077b5;
+}
+
+.github {
+  background: #333;
+}
+
+.game {
+  background: #ff6b6b;
+}

@@ -1,0 +1,37 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.instructions {
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.gameContainer {
+  /* Phaser canvas will be inserted here */
+}
+
+.backLink {
+  margin-top: 2rem;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+
+.backLink:hover {
+  transform: scale(1.05);
+}
