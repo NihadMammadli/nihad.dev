@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>The Clear Path</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        background: #0f0f0f;
+        color: #eaeaea;
+    }
+
+    header, footer {
+        text-align: center;
+        padding: 32px;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    header h1 {
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    header p {
+        opacity: 0.85;
+        line-height: 1.6;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 24px;
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 24px;
+    }
+
+    .cell {
+        background: #161616;
+        border-radius: 10px;
+        padding: 24px;
+        min-height: 220px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .label {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        font-size: 12px;
+        opacity: 0.35;
+    }
+
+    .yellow-box {
+        background: #f5d000;
+        color: #f5d000;
+        user-select: none;
+        cursor: default;
+    }
+
+    .yellow-box p {
+        user-select: none;
+    }
+
+    .hidden-hint {
+        font-size: 20px;
+        margin-top: 16px;
+        min-height: 20px;
+    }
+
+    .math-lock {
+        opacity: 0.04;
+        filter: blur(14px);
+        transition: all 0.3s ease;
+        cursor: help;
+    }
+
+    .math-lock:hover {
+        opacity: 1;
+        filter: blur(0px);
+    }
+
+    .gate {
+        font-size: 48px;
+        opacity: 0.25;
+        margin-top: 16px;
+    }
+
+    footer p {
+        opacity: 0.75;
+        line-height: 1.6;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>The Clear Path</h1>
+    <p>
+        This is not a test of speed, but of attention.<br>
+        Somewhere on this page lies an address of <strong>28 characters</strong>.<br><br>
+        Each section gives a fragment.<br>
+        Everything you need is already here.<br>
+        Colors, numbers, patterns — and the browser itself — are your allies.
+    </p>
+</header>
+
+<div class="grid">
+
+    <div class="cell">
+        <div class="label">(1,1)</div>
+        <p>
+            Two voices begin the tale,<br>
+            one silent, one alone.<br>
+            Each step remembers the two before,<br>
+            and grows from what has been shown.<br><br>
+
+            From nothing, then from one,<br>
+            the path extends in measured gain.<br>
+            Not by chance, but quiet order,<br>
+            the future fed by past domain.<br><br>
+
+            Those who count between the beats<br>
+            will hear the hidden name.
+        </p>
+
+        <hr style="opacity:0.2">
+
+        <p style="word-break: break-all; opacity:0.85;">
+            mafkvsjuijklmhgbvhokljkfhgjv
+        </p>
+    </div>
+
+    <div class="cell yellow-box" id="yellowBox">
+        <div class="label">(1,2)</div>
+
+        <p style="word-break: break-all;">
+            njhiwekvfoghafglhjaujy
+        </p>
+
+        <p class="hidden-hint" id="hiddenHint">
+            <!-- Content will be revealed when color changes -->
+        </p>
+    </div>
+
+    <div class="cell">
+        <div class="label">(2,1)</div>
+
+        <div class="math-lock" id="mathLock">
+            <p>Hover to reveal the challenge...</p>
+        </div>
+
+        <p style="position:absolute; bottom:12px; right:16px; font-size:12px; opacity:0.4;">
+            Not all things reveal themselves by approach.
+        </p>
+    </div>
+
+    <div class="cell">
+        <div class="label">(2,2)</div>
+
+        <p>
+            An address is never complete without a meeting point.
+        </p>
+
+        <p style="font-size: 20px; margin: 16px 0;">
+            ət&nbsp;10<sup>100</sup>
+        </p>
+
+        <p>
+            📬&nbsp;&nbsp;The rest belongs to a well-known global post office.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    <p>
+        When the clear path is found,<br>
+        the gates of the spirit world become visible.
+    </p>
+
+    <div class="gate">⛩️</div>
+
+    <p style="font-size:13px; opacity:0.45;">
+        Not all gates are meant to be forced — some are meant to be understood.
+    </p>
+</footer>
+
+<script>
+// Encoded puzzle content (Base64 encoded to hide from casual inspection)
+const secrets = {
+    mathPuzzle: "PHA+U29sdmUgd2hhdCBzdGFuZHMgYmVmb3JlIHlvdTo8L3A+PHA+eDxzdXA+Mzwvc3VwPiAtIDE2eDxzdXA+Mjwvc3VwPiArIDYzeCA9IDA8L3A+PHA+RnJvbSBpdHMgcm9vdHMsIGZvcm0gdGhlIDxzdHJvbmc+bGFyZ2VzdCBwb3NzaWJsZSB0d28tZGlnaXQgbnVtYmVyPC9zdHJvbmc+Ljxicj48YnI+VGhhdCBudW1iZXIgaXMgeW91ciBmcmFnbWVudC48YnI+PGJyPk5FVkVSIEZPUkdFVCBUSEUgRU1QVElORVNTICEhITwvcD4=",
+    yellowHint: "cmFiYml0IHN0YXJ0cyBmcm9tIG9uZSBhbmQgYWx3YXlzIGp1bXBzIHR3byBzdGVwcw=="
+};
+
+// Decode Base64
+function decode(encoded) {
+    return atob(encoded);
+}
+
+// Math puzzle reveal on hover
+const mathLock = document.getElementById('mathLock');
+let mathRevealed = false;
+
+mathLock.addEventListener('mouseenter', function() {
+    if (!mathRevealed) {
+        this.innerHTML = decode(secrets.mathPuzzle);
+        mathRevealed = true;
+    }
+});
+
+// Yellow box hint reveal when color is changed
+const yellowBox = document.getElementById('yellowBox');
+const hiddenHint = document.getElementById('hiddenHint');
+let hintRevealed = false;
+
+// Check color change periodically
+function checkYellowBoxColor() {
+    const hintColor = window.getComputedStyle(hiddenHint).color;
+    const rgbYellow = 'rgb(245, 208, 0)';
+    
+    // If color is no longer yellow, reveal the hint
+    if (hintColor !== rgbYellow && !hintRevealed) {
+        hiddenHint.textContent = decode(secrets.yellowHint);
+        hintRevealed = true;
+    }
+}
+
+// Use MutationObserver to detect style changes
+const observer = new MutationObserver(checkYellowBoxColor);
+observer.observe(hiddenHint, { 
+    attributes: true, 
+    attributeFilter: ['style', 'class'],
+    subtree: false
+});
+
+// Also check on any click in the document (in case they modify via dev tools)
+document.addEventListener('click', checkYellowBoxColor);
+
+// Initial check
+checkYellowBoxColor();
+
+// Anti-cheat: Make it slightly harder to find the secrets by obfuscating console
+(function() {
+    const originalLog = console.log;
+    console.log = function() {
+        if (arguments[0] && typeof arguments[0] === 'string' && arguments[0].includes('secret')) {
+            return;
+        }
+        originalLog.apply(console, arguments);
+    };
+})();
+</script>
+
+</body>
+</html>
