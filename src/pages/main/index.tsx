@@ -1,6 +1,28 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './index.module.css'
+import {
+  FiGithub,
+  FiLinkedin,
+  FiMail,
+  FiPhone,
+  FiMapPin,
+  FiTerminal,
+  FiCode,
+  FiLayers,
+  FiCpu,
+  FiDatabase,
+  FiZap,
+  FiBarChart2,
+  FiBookOpen,
+  FiAward,
+  FiGlobe,
+  FiFolder,
+  FiBriefcase,
+  FiUser,
+  FiPlay,
+} from 'react-icons/fi'
+import type { IconType } from 'react-icons'
 
 const TYPING_SPEED = 50
 const INTRO_TEXT = 'NIHAD MAMMADLI'
@@ -11,7 +33,6 @@ const experience = [
     period: 'Nov 2025 – Present',
     company: 'Prodigitrack',
     location: 'Baku, Azerbaijan',
-    icon: '>>',
     points: [
       'Leading frontend engineering team — task planning, code reviews, technical decisions',
       'Refactored entire frontend codebase for performance and scalability',
@@ -24,7 +45,6 @@ const experience = [
     period: 'Aug 2024 – Oct 2025',
     company: 'Prodigitrack',
     location: 'Baku, Azerbaijan',
-    icon: '>',
     points: [
       'Built dynamic interfaces with React, TypeScript, Ant Design, TanStack Table/Query for B2B supply chain app',
       'Implemented testing strategies with Jest and React Testing Library',
@@ -36,7 +56,6 @@ const experience = [
     period: 'Jan 2023 – Jul 2024',
     company: 'ERP-Intel',
     location: 'Baku, Azerbaijan',
-    icon: '>',
     points: [
       'Designed complex UIs with React, Redux Toolkit, Material UI, and Vue.js for enterprise resource planning',
       'Developed backend APIs with Node.js and Express',
@@ -49,7 +68,6 @@ const experience = [
     period: 'Jun 2022 – Dec 2023',
     company: 'Freelancer',
     location: 'Baku, Azerbaijan',
-    icon: '>',
     points: [
       'Delivered custom frontend solutions with React, TypeScript, and Redux',
       'Built backend services with Node.js, Express, MySQL, and PostgreSQL',
@@ -77,13 +95,13 @@ const projects = [
   },
 ]
 
-const skills = [
-  { category: 'Frontend', items: ['React', 'TypeScript', 'Redux (RTK)', 'JS (ES6+)', 'Ant Design', 'MUI', 'Tailwind', 'TanStack', 'Charts', 'Vue.js'] },
-  { category: 'Architecture', items: ['Hooks', 'Custom Hooks', 'Context API', 'Scalable Design', 'Lazy Loading'] },
-  { category: 'Testing', items: ['Jest', 'RTL', 'Cypress', 'Puppeteer', 'Selenium', 'Playwright'] },
-  { category: 'Backend & DevOps', items: ['Node.js', 'Express', 'REST', 'MySQL', 'PostgreSQL', 'Docker', 'CI/CD', 'Nginx', 'Git', 'Linux'] },
-  { category: 'Performance', items: ['Responsive UI', 'Cross-browser', 'Web Vitals'] },
-  { category: 'Data', items: ['Python', 'Pandas', 'NumPy', 'Scikit-learn'] },
+const skills: { category: string; icon: IconType; items: string[] }[] = [
+  { category: 'Frontend', icon: FiCode, items: ['React', 'TypeScript', 'Redux (RTK)', 'JS (ES6+)', 'Ant Design', 'MUI', 'Tailwind', 'TanStack', 'Charts', 'Vue.js'] },
+  { category: 'Architecture', icon: FiLayers, items: ['Hooks', 'Custom Hooks', 'Context API', 'Scalable Design', 'Lazy Loading'] },
+  { category: 'Testing', icon: FiTerminal, items: ['Jest', 'RTL', 'Cypress', 'Puppeteer', 'Selenium', 'Playwright'] },
+  { category: 'Backend & DevOps', icon: FiDatabase, items: ['Node.js', 'Express', 'REST', 'MySQL', 'PostgreSQL', 'Docker', 'CI/CD', 'Nginx', 'Git', 'Linux'] },
+  { category: 'Performance', icon: FiZap, items: ['Responsive UI', 'Cross-browser', 'Web Vitals'] },
+  { category: 'Data', icon: FiBarChart2, items: ['Python', 'Pandas', 'NumPy', 'Scikit-learn'] },
 ]
 
 const education = [
@@ -108,19 +126,21 @@ const languages = [
   { name: 'Turkish', level: 'Fluent', pct: 95 },
 ]
 
-// Neon polygon background
+// Cyberpunk neon polygon background with red accents
 function NeonBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const animRef = useRef<number>(0)
-  const nodesRef = useRef<{ x: number; y: number; vx: number; vy: number }[]>([])
+  const nodesRef = useRef<{ x: number; y: number; vx: number; vy: number; red: boolean }[]>([])
+  const timeRef = useRef(0)
 
   const initNodes = useCallback((w: number, h: number) => {
-    const count = Math.floor((w * h) / 25000)
-    nodesRef.current = Array.from({ length: Math.min(count, 80) }, () => ({
+    const count = Math.floor((w * h) / 20000)
+    nodesRef.current = Array.from({ length: Math.min(count, 100) }, () => ({
       x: Math.random() * w,
       y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      red: Math.random() < 0.35,
     }))
   }, [])
 
@@ -141,9 +161,10 @@ function NeonBackground() {
     const draw = () => {
       const { width: w, height: h } = canvas
       ctx.clearRect(0, 0, w, h)
+      timeRef.current += 0.005
 
       const nodes = nodesRef.current
-      const maxDist = 180
+      const maxDist = 200
 
       // Move nodes
       for (const n of nodes) {
@@ -160,8 +181,13 @@ function NeonBackground() {
           const dy = nodes[i].y - nodes[j].y
           const dist = Math.sqrt(dx * dx + dy * dy)
           if (dist < maxDist) {
-            const alpha = (1 - dist / maxDist) * 0.12
-            ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`
+            const alpha = (1 - dist / maxDist) * 0.15
+            const isRed = nodes[i].red || nodes[j].red
+            if (isRed) {
+              ctx.strokeStyle = `rgba(255, 30, 50, ${alpha * 0.8})`
+            } else {
+              ctx.strokeStyle = `rgba(255, 255, 255, ${alpha * 0.5})`
+            }
             ctx.lineWidth = 1
             ctx.beginPath()
             ctx.moveTo(nodes[i].x, nodes[i].y)
@@ -173,10 +199,27 @@ function NeonBackground() {
 
       // Draw nodes
       for (const n of nodes) {
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.25)'
+        if (n.red) {
+          ctx.fillStyle = 'rgba(255, 30, 50, 0.5)'
+          ctx.shadowColor = 'rgba(255, 30, 50, 0.3)'
+          ctx.shadowBlur = 6
+        } else {
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.2)'
+          ctx.shadowColor = 'transparent'
+          ctx.shadowBlur = 0
+        }
         ctx.beginPath()
-        ctx.arc(n.x, n.y, 1.5, 0, Math.PI * 2)
+        ctx.arc(n.x, n.y, n.red ? 2 : 1.5, 0, Math.PI * 2)
         ctx.fill()
+      }
+      ctx.shadowBlur = 0
+
+      // Floating red horizontal glitch lines
+      const t = timeRef.current
+      for (let i = 0; i < 3; i++) {
+        const y = ((Math.sin(t * (0.7 + i * 0.3) + i * 2) + 1) / 2) * h
+        ctx.fillStyle = `rgba(255, 30, 50, ${0.015 + Math.sin(t * 2 + i) * 0.01})`
+        ctx.fillRect(0, y, w, 1)
       }
 
       animRef.current = requestAnimationFrame(draw)
@@ -214,16 +257,23 @@ function Main() {
     return () => clearInterval(timer)
   }, [])
 
-  // Random glitch effect on name
+  // Random glitch effect on name — more aggressive cyberpunk style
   useEffect(() => {
-    const glitchInterval = setInterval(() => {
+    const triggerGlitch = () => {
       setGlitchText(true)
-      setTimeout(() => setGlitchText(false), 150)
-    }, 4000 + Math.random() * 3000)
+      setTimeout(() => setGlitchText(false), 200)
+    }
+    const glitchInterval = setInterval(() => {
+      triggerGlitch()
+      // Sometimes double-glitch for extra punch
+      if (Math.random() < 0.3) {
+        setTimeout(triggerGlitch, 300)
+      }
+    }, 3000 + Math.random() * 4000)
     return () => clearInterval(glitchInterval)
   }, [])
 
-  // Intersection observer for scroll animations
+  // Intersection observer
   useEffect(() => {
     if (!showContent) return
     const observer = new IntersectionObserver(
@@ -252,10 +302,16 @@ function Main() {
   return (
     <div className={styles.page}>
       <NeonBackground />
+
+      {/* Red neon corner accents */}
+      <div className={styles.cornerTL} />
+      <div className={styles.cornerBR} />
+
       <div className={styles.container}>
         {/* HEADER */}
         <header className={styles.header}>
           <div className={styles.scanline} />
+          <div className={styles.headerRedBar} />
           <h1 className={`${styles.name} ${glitchText ? styles.glitch : ''}`} data-text={displayText}>
             {displayText}
             <span className={styles.cursor}>_</span>
@@ -264,30 +320,33 @@ function Main() {
             <div className={styles.headerMeta}>
               <p className={styles.tagline}>
                 <span className={styles.tagBracket}>[</span>
+                <FiCpu className={styles.inlineIcon} />
                 FRONTEND DEVELOPER
                 <span className={styles.tagDot}> // </span>
                 3+ YEARS
                 <span className={styles.tagDot}> // </span>
+                <FiMapPin className={styles.inlineIcon} />
                 BAKU, AZERBAIJAN
                 <span className={styles.tagBracket}>]</span>
               </p>
               <div className={styles.contactRow}>
-                <span>nihadmammadli03@gmail.com</span>
+                <span className={styles.contactItem}>
+                  <FiMail className={styles.contactIcon} />
+                  nihadmammadli03@gmail.com
+                </span>
                 <span className={styles.separator}>//</span>
-                <span>+994 51 380 25 96</span>
+                <span className={styles.contactItem}>
+                  <FiPhone className={styles.contactIcon} />
+                  +994 51 380 25 96
+                </span>
               </div>
               <div className={styles.linksRow}>
                 <a href="https://github.com/NihadMammadli" target="_blank" rel="noopener noreferrer">
-                  <span className={styles.linkIcon}>&#9654;</span> GitHub
+                  <FiGithub /> <span>GitHub</span>
                 </a>
                 <a href="https://www.linkedin.com/in/nihad-mammadli-a18a55236/" target="_blank" rel="noopener noreferrer">
-                  <span className={styles.linkIcon}>&#9654;</span> LinkedIn
+                  <FiLinkedin /> <span>LinkedIn</span>
                 </a>
-                {window.location.hostname === 'localhost' && (
-                  <Link to="/game">
-                    <span className={styles.linkIcon}>&#9654;</span> Game
-                  </Link>
-                )}
               </div>
             </div>
           )}
@@ -298,7 +357,8 @@ function Main() {
             {/* ABOUT */}
             <section id="summary" ref={setSectionRef('summary')} className={sectionClass('summary')}>
               <h2 className={styles.sectionTitle}>
-                <span className={styles.titleDecor}>&lt;</span> ABOUT <span className={styles.titleDecor}>/&gt;</span>
+                <FiUser className={styles.sectionIcon} />
+                ABOUT
               </h2>
               <div className={styles.aboutCard}>
                 <p>Frontend Developer with 3+ years of hands-on experience building dynamic, high-logic applications using React, JavaScript, and Node.js. Proficient in responsive, user-centric interfaces with modern frameworks. Experienced in backend integration, RESTful APIs, CI/CD pipelines, and cross-functional team collaboration.</p>
@@ -308,19 +368,22 @@ function Main() {
             {/* EXPERIENCE */}
             <section id="experience" ref={setSectionRef('experience')} className={sectionClass('experience')}>
               <h2 className={styles.sectionTitle}>
-                <span className={styles.titleDecor}>&lt;</span> EXPERIENCE <span className={styles.titleDecor}>/&gt;</span>
+                <FiBriefcase className={styles.sectionIcon} />
+                EXPERIENCE
               </h2>
               <div className={styles.timeline}>
                 {experience.map((job, i) => (
-                  <div key={i} className={styles.card} style={{ animationDelay: `${i * 0.1}s` }}>
+                  <div key={i} className={styles.card}>
                     <div className={styles.cardGlow} />
+                    <div className={styles.cardRedStripe} />
                     <div className={styles.cardInner}>
                       <div className={styles.cardHeader}>
                         <div>
-                          <h3 className={styles.cardTitle}>
-                            <span className={styles.cardIcon}>{job.icon}</span> {job.role}
-                          </h3>
-                          <span className={styles.cardCompany}>{job.company} — {job.location}</span>
+                          <h3 className={styles.cardTitle}>{job.role}</h3>
+                          <span className={styles.cardCompany}>
+                            <FiMapPin className={styles.tinyIcon} />
+                            {job.company} — {job.location}
+                          </span>
                         </div>
                         <span className={styles.cardPeriod}>{job.period}</span>
                       </div>
@@ -338,12 +401,14 @@ function Main() {
             {/* PROJECTS */}
             <section id="projects" ref={setSectionRef('projects')} className={sectionClass('projects')}>
               <h2 className={styles.sectionTitle}>
-                <span className={styles.titleDecor}>&lt;</span> PROJECTS <span className={styles.titleDecor}>/&gt;</span>
+                <FiFolder className={styles.sectionIcon} />
+                PROJECTS
               </h2>
               <div className={styles.projectsGrid}>
                 {projects.map((project, i) => (
                   <div key={i} className={styles.projectCard}>
                     <div className={styles.cardGlow} />
+                    <div className={styles.cardRedStripe} />
                     <div className={styles.cardInner}>
                       <h3 className={styles.projectName}>{project.name}</h3>
                       <span className={styles.projectSub}>{project.subtitle}</span>
@@ -361,14 +426,18 @@ function Main() {
             {/* SKILLS */}
             <section id="skills" ref={setSectionRef('skills')} className={sectionClass('skills')}>
               <h2 className={styles.sectionTitle}>
-                <span className={styles.titleDecor}>&lt;</span> SKILLS <span className={styles.titleDecor}>/&gt;</span>
+                <FiCpu className={styles.sectionIcon} />
+                SKILLS
               </h2>
               <div className={styles.skillsGrid}>
                 {skills.map((group) => (
                   <div key={group.category} className={styles.skillCard}>
                     <div className={styles.cardGlow} />
                     <div className={styles.cardInner}>
-                      <h4 className={styles.skillCategory}>{group.category}</h4>
+                      <h4 className={styles.skillCategory}>
+                        <group.icon className={styles.skillCatIcon} />
+                        {group.category}
+                      </h4>
                       <div className={styles.skillTags}>
                         {group.items.map((item) => (
                           <span key={item} className={styles.skillTag}>{item}</span>
@@ -383,20 +452,30 @@ function Main() {
             {/* EDUCATION */}
             <section id="education" ref={setSectionRef('education')} className={sectionClass('education')}>
               <h2 className={styles.sectionTitle}>
-                <span className={styles.titleDecor}>&lt;</span> EDUCATION <span className={styles.titleDecor}>/&gt;</span>
+                <FiBookOpen className={styles.sectionIcon} />
+                EDUCATION
               </h2>
               {education.map((edu, i) => (
                 <div key={i} className={styles.card}>
                   <div className={styles.cardGlow} />
+                  <div className={styles.cardRedStripe} />
                   <div className={styles.cardInner}>
                     <div className={styles.cardHeader}>
                       <div>
                         <h3 className={styles.cardTitle}>{edu.degree}</h3>
-                        <span className={styles.cardCompany}>{edu.school}</span>
+                        <span className={styles.cardCompany}>
+                          <FiMapPin className={styles.tinyIcon} />
+                          {edu.school}
+                        </span>
                       </div>
                       <span className={styles.cardPeriod}>{edu.period}</span>
                     </div>
-                    {edu.honors && <p className={styles.honors}>{edu.honors}</p>}
+                    {edu.honors && (
+                      <p className={styles.honors}>
+                        <FiAward className={styles.honorsIcon} />
+                        {edu.honors}
+                      </p>
+                    )}
                     {edu.coursework && <p className={styles.coursework}>{edu.coursework}</p>}
                   </div>
                 </div>
@@ -406,7 +485,8 @@ function Main() {
             {/* LANGUAGES */}
             <section id="languages" ref={setSectionRef('languages')} className={sectionClass('languages')}>
               <h2 className={styles.sectionTitle}>
-                <span className={styles.titleDecor}>&lt;</span> LANGUAGES <span className={styles.titleDecor}>/&gt;</span>
+                <FiGlobe className={styles.sectionIcon} />
+                LANGUAGES
               </h2>
               <div className={styles.langsGrid}>
                 {languages.map((lang) => (
