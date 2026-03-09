@@ -1,0 +1,1 @@
+// here will be puzzles page, but for now it is just a placeholder
