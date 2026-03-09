@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { Link } from 'react-router-dom'
 import styles from './index.module.css'
 import {
   FiGithub,
@@ -20,7 +19,6 @@ import {
   FiFolder,
   FiBriefcase,
   FiUser,
-  FiPlay,
 } from 'react-icons/fi'
 import type { IconType } from 'react-icons'
 
