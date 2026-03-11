@@ -65,7 +65,7 @@
   color: #fff;
   font-family: 'Rajdhani', 'Share Tech Mono', monospace;
   padding: 0 2rem 4rem;
-  max-width: 960px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
@@ -115,7 +115,7 @@
 
 .name {
   font-family: 'Orbitron', sans-serif;
-  font-size: clamp(2.2rem, 7vw, 4.5rem);
+  font-size: clamp(1.3rem, 5.5vw, 4.5rem);
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -123,6 +123,7 @@
   margin: 0 0 1.5rem;
   position: relative;
   color: #fff;
+  white-space: nowrap;
   text-shadow:
     0 0 10px rgba(255, 255, 255, 0.2),
     0 0 40px var(--red-glow),
@@ -214,7 +215,7 @@
 
 .tagline {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #777;
@@ -228,7 +229,7 @@
 
 .inlineIcon {
   color: var(--red);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   flex-shrink: 0;
 }
 
@@ -242,7 +243,7 @@
 
 .contactRow {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: #888;
   margin-bottom: 1.2rem;
   display: flex;
@@ -277,7 +278,7 @@
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   border: 1px solid rgba(255, 30, 50, 0.3);
@@ -340,7 +341,7 @@
 
 .sectionTitle {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -355,7 +356,7 @@
 
 .sectionIcon {
   color: var(--red);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   filter: drop-shadow(0 0 4px var(--red-dim));
 }
 
@@ -363,8 +364,8 @@
 .aboutCard {
   border-left: 3px solid var(--red);
   padding: 1.5rem 2rem;
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.85;
   color: #aaa;
   font-family: 'Rajdhani', sans-serif;
   font-weight: 500;
@@ -475,7 +476,7 @@
 
 .cardTitle {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -498,7 +499,7 @@
 
 .cardCompany {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: #666;
   letter-spacing: 0.05em;
   display: flex;
@@ -508,7 +509,7 @@
 
 .cardPeriod {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   color: var(--red-dim);
   font-weight: 400;
   letter-spacing: 0.15em;
@@ -536,9 +537,9 @@
   position: relative;
   padding-left: 1.4rem;
   margin-bottom: 0.6rem;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: #999;
-  line-height: 1.7;
+  line-height: 1.75;
   font-family: 'Rajdhani', sans-serif;
   font-weight: 500;
 }
@@ -611,7 +612,7 @@
 
 .projectName {
   font-family: 'Orbitron', sans-serif;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -622,7 +623,7 @@
 
 .projectSub {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: #555;
   letter-spacing: 0.1em;
   display: block;
@@ -642,7 +643,7 @@
 
 .skillCategory {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.25em;
@@ -667,7 +668,7 @@
 
 .skillTag {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   color: #bbb;
   padding: 0.3rem 0.7rem;
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -727,7 +728,7 @@
 
 .langName {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -738,7 +739,7 @@
 
 .langLevel {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   color: #666;
   letter-spacing: 0.1em;
   display: block;
@@ -772,7 +773,7 @@
 /* ==================== CARD DETAILS (shared) ==================== */
 .cardSummary {
   font-family: 'Rajdhani', sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: #888;
   line-height: 1.7;
   margin: 0 0 1rem;
@@ -781,7 +782,7 @@
 
 .cardSubheading {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.67rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -794,7 +795,7 @@
 
 .subheadingIcon {
   color: var(--red);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   filter: drop-shadow(0 0 3px var(--red-glow));
 }
 
@@ -807,9 +808,9 @@
 
 .techTag {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   color: var(--red-dim);
-  padding: 0.2rem 0.6rem;
+  padding: 0.25rem 0.65rem;
   border: 1px solid rgba(255, 30, 50, 0.15);
   background: rgba(255, 30, 50, 0.04);
   transition: all 0.25s ease;
@@ -832,9 +833,9 @@
 
 .moduleTag {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   color: #999;
-  padding: 0.2rem 0.6rem;
+  padding: 0.25rem 0.65rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.02);
   transition: all 0.25s ease;
@@ -849,7 +850,7 @@
 /* ==================== RESEARCH ==================== */
 .researchLink {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -873,7 +874,7 @@
 
 .keywordRow {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: #555;
   margin-top: 1rem;
   display: flex;
@@ -885,7 +886,7 @@
 /* ==================== ACHIEVEMENTS ==================== */
 .achievementScore {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   color: var(--red);
@@ -910,7 +911,7 @@
 
 .interestTag {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   color: #bbb;
   padding: 0.6rem 1.2rem;
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -942,7 +943,7 @@
   padding-top: 2rem;
   margin-top: 2rem;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   letter-spacing: 0.3em;
   color: #444;
   text-transform: uppercase;
@@ -1001,18 +1002,51 @@
 }
 
 /* ==================== RESPONSIVE ==================== */
-@media (max-width: 700px) {
+
+/* Tablet landscape */
+@media (max-width: 1024px) {
   .container {
-    padding: 0 1rem 3rem;
+    max-width: 100%;
+    padding: 0 1.5rem 4rem;
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet portrait / small laptop */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem 3rem;
   }
 
   .header {
-    padding: 3rem 0 2rem;
+    padding: 3.5rem 0 2.5rem;
     margin-bottom: 2.5rem;
   }
 
   .tagline {
-    font-size: 0.7rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+  }
+
+  .contactRow {
+    font-size: 0.78rem;
+  }
+
+  .sectionTitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.25em;
+  }
+
+  .section {
+    margin-bottom: 3rem;
+  }
+
+  .aboutCard {
+    padding: 1.25rem 1.5rem;
+    font-size: 0.95rem;
   }
 
   .cardHeader {
@@ -1020,12 +1054,17 @@
     gap: 0.5rem;
   }
 
-  .skillsGrid {
-    grid-template-columns: 1fr;
+  .projectHeader {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  .projectsGrid {
-    grid-template-columns: 1fr;
+  .cardInner {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .skillsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
 
   .langsGrid {
@@ -1040,19 +1079,230 @@
     left: -1rem;
   }
 
+  .cornerTL,
+  .cornerBR {
+    width: 80px;
+    height: 80px;
+  }
+
+  .interestsGrid {
+    gap: 0.5rem;
+  }
+
+  .interestTag {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .container {
+    padding: 0 1rem 2.5rem;
+  }
+
+  .header {
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .tagline {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
+
+  .contactRow {
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .linksRow {
+    gap: 0.5rem;
+  }
+
+  .linksRow a {
+    font-size: 0.65rem;
+    padding: 0.45rem 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+  }
+
+  .sectionIcon {
+    font-size: 1rem;
+  }
+
+  .section {
+    margin-bottom: 2.5rem;
+  }
+
+  .aboutCard {
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+
   .cardInner {
-    padding: 1.25rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .cardTitle {
+    font-size: 0.78rem;
+  }
+
+  .cardCompany {
+    font-size: 0.72rem;
+  }
+
+  .cardPeriod {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .cardSummary {
+    font-size: 0.88rem;
+  }
+
+  .cardSubheading {
+    font-size: 0.6rem;
+  }
+
+  .cardList li {
+    font-size: 0.88rem;
+    padding-left: 1.2rem;
+  }
+
+  .techTag,
+  .moduleTag {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .skillCategory {
+    font-size: 0.65rem;
+  }
+
+  .skillTag {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .projectName {
+    font-size: 0.9rem;
+  }
+
+  .projectSub {
+    font-size: 0.68rem;
+  }
+
+  .langName {
+    font-size: 0.75rem;
+  }
+
+  .langLevel {
+    font-size: 0.65rem;
+  }
+
+  .langsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .researchLink {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  .achievementScore {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .interestTag {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.75rem;
   }
 
   .cornerTL,
   .cornerBR {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .timeline {
+    padding-left: 0.75rem;
+  }
+
+  .timeline .card::before {
+    left: -0.75rem;
+    width: 6px;
+    height: 6px;
+  }
+
+  .footer {
+    font-size: 0.65rem;
   }
 }
 
-@media (max-width: 450px) {
+/* Small mobile */
+@media (max-width: 380px) {
+  .container {
+    padding: 0 0.75rem 2rem;
+  }
+
+  .header {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .tagline {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+  }
+
+  .contactRow {
+    font-size: 0.7rem;
+  }
+
+  .linksRow a {
+    font-size: 0.6rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .aboutCard {
+    padding: 0.85rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .cardInner {
+    padding: 0.85rem 1rem;
+  }
+
   .langsGrid {
     grid-template-columns: 1fr;
+  }
+
+  .interestsGrid {
+    gap: 0.4rem;
+  }
+
+  .interestTag {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.7rem;
+  }
+
+  .cornerTL,
+  .cornerBR {
+    display: none;
   }
 }
