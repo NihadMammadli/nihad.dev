@@ -359,7 +359,7 @@ function Main() {
                 ABOUT
               </h2>
               <div className={styles.aboutCard}>
-                <p>Frontend Developer with 3+ years of hands-on experience building dynamic, high-logic applications using React, JavaScript, and Node.js. Proficient in responsive, user-centric interfaces with modern frameworks. Experienced in backend integration, RESTful APIs, CI/CD pipelines, and cross-functional team collaboration.</p>
+                <p>Frontend Developer with almost 4 years of hands-on experience building dynamic, high-logic applications using React, JavaScript, and Node.js. Proficient in responsive, user-centric interfaces with modern frameworks. Experienced in backend integration, RESTful APIs, CI/CD pipelines, and cross-functional team collaboration.</p>
               </div>
             </section>
 
