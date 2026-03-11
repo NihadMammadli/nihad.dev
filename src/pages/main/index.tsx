@@ -105,15 +105,16 @@ const skills: { category: string; icon: IconType; items: string[] }[] = [
 const education = [
   {
     degree: 'MSc in Data Science',
-    school: 'Azerbaijan State University of Economics (UNEC)',
-    period: '2025 – 2026 (expected)',
+    school: 'Azerbaijan State University of Economics (UNEC), Baku',
+    period: '2025 – 2027 (expected)',
+    coursework: 'Statistics ·  Deep Learning · Data Visualization · Natural Language Processing',
   },
   {
     degree: 'BSc in Computer Science',
     school: 'ADA University, Baku',
-    period: '2020 – 2024',
+    period: '2020 – 2025',
     honors: "Dean's List",
-    coursework: 'Data Structures & Algorithms · Machine Learning · AI · Software Design Patterns · Database Systems · Distributed Systems',
+    coursework: 'Data Structures & Algorithms · Web Development · Distributed Systems · Machine Learning · Software Design Patterns · Database Systems',
   },
 ]
 
@@ -508,7 +509,7 @@ function Main() {
         {showContent && (
           <footer className={styles.footer}>
             <div className={styles.footerLine} />
-            <span>&copy; 2024 NIHAD MAMMADLI</span>
+            <span>&copy; 2026 NIHAD MAMMADLI</span>
             <span className={styles.cursor}>_</span>
           </footer>
         )}
