@@ -63,7 +63,7 @@ const experience = [
   },
   {
     role: 'Frontend Developer',
-    period: 'Jun 2022 – Dec 2023',
+    period: 'Jun 2022 – Dec 2022',
     company: 'Freelancer',
     location: 'Baku, Azerbaijan',
     points: [
@@ -118,10 +118,10 @@ const education = [
 ]
 
 const languages = [
-  { name: 'Azerbaijani', level: 'Native', pct: 100 },
   { name: 'English', level: 'Advanced', pct: 90 },
   { name: 'Russian', level: 'Fluent', pct: 95 },
   { name: 'Turkish', level: 'Fluent', pct: 95 },
+  { name: 'Azerbaijani', level: 'Native', pct: 100 },
 ]
 
 // Cyberpunk neon polygon background with red accents
@@ -321,7 +321,7 @@ function Main() {
                 <FiCpu className={styles.inlineIcon} />
                 FRONTEND DEVELOPER
                 <span className={styles.tagDot}> // </span>
-                3+ YEARS
+                ~4 YEARS
                 <span className={styles.tagDot}> // </span>
                 <FiMapPin className={styles.inlineIcon} />
                 BAKU, AZERBAIJAN
