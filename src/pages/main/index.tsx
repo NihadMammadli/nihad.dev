@@ -25,6 +25,9 @@ import {
   FiTag,
   FiCheckCircle,
   FiTrendingUp,
+  FiMonitor,
+  FiServer,
+  FiUsers,
 } from 'react-icons/fi'
 import type { IconType } from 'react-icons'
 
@@ -96,13 +99,13 @@ const TYPING_SPEED = 50
 const INTRO_TEXT = 'NIHAD MAMMADLI'
 
 const about = `
-Frontend Engineer with nearly 4 years of professional experience designing and building complex, high-performance web applications. Specialized in React ecosystem, scalable frontend architecture, and enterprise UI development.
+Senior Frontend Engineer with 5+ years of experience building complex, data-heavy React and TypeScript applications for enterprise clients, currently leading a frontend team of 5.
 
-Experienced in building large-scale B2B platforms, procurement systems, and ERP solutions used in production environments. Strong background in performance optimization, reusable component systems, and modern state management patterns.
+Full-stack capable: backend services and REST APIs with Node.js/Express and Python/Django, with relational data modelling in PostgreSQL and MySQL.
 
-Comfortable working across the full development lifecycle — from system architecture and UI design systems to backend integration, testing strategies, and CI/CD pipelines.
+Delivers end to end, from architecture to production: Docker, Nginx, TLS, CI/CD pipelines, and separate staging and production environments on Linux.
 
-Currently leading frontend development initiatives, mentoring engineers, driving architectural decisions, and collaborating with cross-functional teams to deliver scalable enterprise-grade products.
+Solid foundation in data and machine learning (Python, Pandas, NumPy, scikit-learn), backed by a Computer Science degree and an MSc in Data Science in progress.
 `
 
 const experience: ExperienceItem[] = [
@@ -113,23 +116,22 @@ const experience: ExperienceItem[] = [
     location: 'Baku, Azerbaijan',
 
     summary:
-      'Leading frontend architecture and development for enterprise procurement platforms used by corporate clients.',
+      'Leading a team of 5 frontend engineers on an enterprise-grade B2B procurement platform, and designing, building, and deploying full-stack products end to end.',
 
     tech:
-      ['React', 'TypeScript', 'TanStack Query', 'TanStack Table', 'Ant Design', 'Node.js', 'Docker', 'Nginx'],
+      ['React', 'TypeScript', 'TanStack Query', 'TanStack Table', 'Ant Design', 'Next.js', 'Django', 'Wagtail', 'PostgreSQL', 'Docker', 'Nginx'],
 
     responsibilities: [
-      'Lead frontend engineering efforts including task planning, architecture design, and code review processes',
-      'Drive technical decision making for frontend stack, scalability, and maintainability',
-      'Coordinate closely with backend engineers, product managers, and UI/UX designers',
-      'Mentor and guide junior and mid-level frontend developers'
+      'Lead a team of 5 frontend engineers, coordinating task planning, code reviews, and technical decision-making',
+      'Collaborate closely with product owners, designers, and backend teams',
+      'Design, build, and deploy full-stack products from architecture to production'
     ],
 
     achievements: [
-      'Refactored legacy frontend architecture improving maintainability and reducing technical debt',
-      'Standardized internal UI component library used across multiple enterprise modules',
-      'Improved application performance and bundle size through lazy loading and optimized rendering',
-      'Implemented scalable API integration patterns with caching and query management'
+      'Refactored the entire frontend codebase to improve performance, scalability, and long-term maintainability',
+      'Finalized and standardized the UI Kit of 20+ reusable components, establishing design consistency and best practices across the application',
+      'Delivered a production-ready, enterprise-grade B2B platform now used by 3+ large enterprises',
+      'Shipped two full-stack products end to end: the company website dmpservice.ai (Next.js + Wagtail CMS) and the internal platform Hermes (Django + React)'
     ]
   },
 
@@ -140,72 +142,68 @@ const experience: ExperienceItem[] = [
     location: 'Baku, Azerbaijan',
 
     summary:
-      'Developed complex frontend systems for a modular B2B supply chain and procurement management platform.',
+      'Developed dynamic, responsive frontend interfaces for a B2B supply chain web application serving large enterprises.',
 
     tech:
       ['React', 'TypeScript', 'Ant Design', 'TanStack Query', 'TanStack Table', 'Jest', 'React Testing Library'],
 
     responsibilities: [
-      'Built interactive enterprise dashboards and data-heavy tables for procurement workflows',
-      'Integrated REST APIs and implemented efficient client-side data caching',
-      'Developed reusable UI components following atomic design principles',
-      'Implemented accessibility-focused responsive layouts'
+      'Built dynamic, responsive interfaces with React, TypeScript, and Ant Design',
+      'Developed data-heavy views with TanStack Table and server state management with TanStack Query',
+      'Implemented unit and integration tests with Jest and React Testing Library'
     ],
 
     achievements: [
-      'Reduced data table rendering time through virtualization and optimized state management',
-      'Introduced automated unit testing improving reliability of critical components',
-      'Improved cross-browser consistency across Chrome, Firefox, and Safari'
+      'Introduced comprehensive testing strategies that improved application reliability and maintainability',
+      'Delivered fully responsive designs with a strong focus on accessibility',
+      'Ensured consistent performance across all major browsers'
     ]
   },
 
   {
     role: 'Frontend Developer',
-    period: 'Jan 2023 – Jul 2024',
+    period: 'Aug 2022 – Aug 2024',
     company: 'ERP-Intel',
     location: 'Baku, Azerbaijan',
 
     summary:
-      'Worked on enterprise ERP system covering finance, HR, warehouse, and operational management modules.',
+      'Built interfaces with complex business logic for an enterprise resource planning system covering finance, HR, timesheet, contract, and warehouse modules.',
 
     tech:
       ['React', 'Redux Toolkit', 'Material UI', 'Vue.js', 'Node.js', 'Express', 'Docker', 'Nginx', 'Cypress'],
 
     responsibilities: [
-      'Developed complex UI workflows for finance, HR, and warehouse management modules',
-      'Built backend REST APIs using Node.js and Express',
-      'Maintained deployment infrastructure and containerization using Docker',
-      'Implemented automated E2E testing pipelines'
+      'Designed and developed complex user interfaces with React, Redux Toolkit, Material UI, and Vue.js',
+      'Developed backend APIs and services with Node.js and Express',
+      'Led DevOps efforts: containerization with Docker, deployment and server configuration with Nginx, and Linux CLI operations'
     ],
 
     achievements: [
-      'Developed dynamic role-based permission system for secure multi-department access',
-      'Reduced manual QA effort by introducing Cypress E2E testing workflows',
-      'Optimized frontend state management using Redux Toolkit'
+      'Implemented a dynamic role-based permission system for granular user access control and secure data operations',
+      'Established Cypress testing workflows to ensure end-to-end quality and prevent regressions'
     ]
   },
 
   {
     role: 'Frontend Developer',
-    period: 'Jun 2022 – Dec 2022',
+    period: 'Jul 2021 – Jul 2022',
     company: 'Freelancer',
     location: 'Baku, Azerbaijan',
 
     summary:
-      'Delivered full-stack web solutions for small businesses and startup clients.',
+      'Delivered custom frontend solutions and backend services for clients, with a focus on responsive and user-friendly design.',
 
     tech:
-      ['React', 'TypeScript', 'Redux', 'Node.js', 'Express', 'MySQL', 'PostgreSQL'],
+      ['React', 'TypeScript', 'Redux', 'Context API', 'Node.js', 'Express', 'MySQL', 'PostgreSQL'],
 
     responsibilities: [
-      'Designed and implemented responsive web interfaces',
-      'Developed REST APIs and backend services',
-      'Built reusable component libraries for faster feature development'
+      'Delivered custom frontend solutions primarily with React, TypeScript, and Redux',
+      'Developed backend services and APIs with Node.js and Express, integrating MySQL and PostgreSQL databases'
     ],
 
     achievements: [
-      'Delivered multiple projects from concept to production',
-      'Established scalable state management patterns for client applications'
+      'Built reusable components and managed application state with Redux and Context API for scalability',
+      'Delivered responsive, user-friendly designs for clients'
     ]
   }
 ]
@@ -216,21 +214,18 @@ const projects: ProjectItem[] = [
     subtitle: 'Digital Modular Procurement Platform',
 
     description:
-      'Enterprise procurement platform enabling organizations to manage sourcing, vendor evaluation, demand planning, and contract lifecycle management within a modular architecture.',
+      'Modular procurement system covering sourcing, demand planning, and contract management, used by 3+ large enterprises.',
 
     modules: [
       'Sourcing',
-      'Vendor Management',
       'Demand Planning',
-      'Contract Lifecycle Management',
-      'Procurement Analytics'
+      'Contract Management'
     ],
 
     contributions: [
-      'Developed core frontend architecture for procurement workflows',
-      'Built reusable component library @dmp-tech/ui using Storybook',
-      'Implemented advanced table systems with sorting, filtering, pagination, and dynamic columns',
-      'Designed scalable state management patterns for multi-module integration'
+      'Built and maintained the frontend of the procurement platform',
+      'Developed the custom UI component library @dmp-tech/ui with 20+ components, documented in Storybook',
+      'Ensured design consistency and scalability across modules through the shared component library'
     ],
 
     tech: [
@@ -244,11 +239,81 @@ const projects: ProjectItem[] = [
   },
 
   {
+    name: 'dmpservice.ai',
+    subtitle: 'Company Website & Headless CMS (Full-Stack, Self-Deployed)',
+
+    link: 'https://dmpservice.ai/',
+
+    description:
+      'Company website rebuilt from a signed-off 52-page static prototype onto a CMS: Next.js 16 / React 19 renders every public page, while Wagtail / Django serves the admin and JSON API, backed by PostgreSQL.',
+
+    features: [
+      'Every page editable without a deploy: publishing in the CMS updates the live page in about a second through tag-based cache revalidation',
+      'Slug changes create 301 redirects automatically',
+      'Technical SEO: editable titles, meta descriptions, canonicals, robots and Open Graph tags, JSON-LD, a sitemap, and 410 responses for retired WordPress URLs'
+    ],
+
+    contributions: [
+      'Built the Next.js frontend and the Wagtail / Django backend end to end',
+      'Deployed staging and production on one VM with Docker Compose behind a shared Nginx edge with TLS and S3-compatible media storage',
+      'Set up CI/CD: a push to main deploys staging, a version tag deploys production',
+      'Built an automated verification suite: visual-fidelity diffs against the prototype, browser render checks on all 52 routes, link checks, SEO assertions, and post-deploy smoke tests'
+    ],
+
+    tech: [
+      'Next.js 16',
+      'React 19',
+      'Wagtail',
+      'Django',
+      'PostgreSQL',
+      'Docker Compose',
+      'Nginx',
+      'CI/CD'
+    ]
+  },
+
+  {
+    name: 'Hermes',
+    subtitle: 'Internal Knowledge & Team Platform (Full-Stack, Self-Deployed)',
+
+    description:
+      "DMP's internal platform: a company handbook with review before publication, a team directory with a who-to-ask matrix, learning paths with progress tracking, and an IT support queue.",
+
+    features: [
+      'Article approval workflow with revisions, threaded comments, and mentions',
+      'PostgreSQL full-text search that respects access rules',
+      'Team directory with a who-to-ask matrix',
+      'Learning paths with progress tracking',
+      'IT support ticket queue'
+    ],
+
+    contributions: [
+      'Built the platform with Django + DRF, PostgreSQL, Redis, and a React + TypeScript frontend',
+      'Designed a single object-level access model that governs onboarding scope, project visibility, contribution rights, and ticket access',
+      'Implemented cookie-based JWT auth with CSRF protection',
+      'Documented the API with OpenAPI (drf-spectacular) and covered it with a pytest suite including end-to-end journeys',
+      'Deployed with Gunicorn, Nginx, TLS, and multi-stage Docker builds'
+    ],
+
+    tech: [
+      'Django',
+      'Django REST Framework',
+      'PostgreSQL',
+      'Redis',
+      'React',
+      'TypeScript',
+      'Docker',
+      'Nginx',
+      'Pytest'
+    ]
+  },
+
+  {
     name: 'ERP Intel',
     subtitle: 'Enterprise Resource Planning Platform',
 
     description:
-      'Comprehensive ERP system providing operational tools for finance management, HR operations, timesheets, contract management, and warehouse logistics.',
+      'Large-scale ERP system providing operational tools for finance management, HR operations, timesheets, contract management, and warehouse logistics.',
 
     modules: [
       'Finance',
@@ -259,9 +324,9 @@ const projects: ProjectItem[] = [
     ],
 
     contributions: [
-      'Developed dynamic role-based access control system',
-      'Implemented enterprise UI components across multiple modules',
-      'Integrated backend APIs for real-time operational data'
+      'Implemented a dynamic role-based permission system for granular user access control and secure data operations',
+      'Built user interfaces with complex business logic across multiple modules',
+      'Developed backend APIs and services with Node.js and Express'
     ],
 
     tech: [
@@ -274,27 +339,66 @@ const projects: ProjectItem[] = [
   },
 
   {
-    name: 'Damla Group Website',
-    subtitle: 'Corporate Business Website',
+    name: 'Damla Group',
+    subtitle: 'Corporate Website (Full-Stack)',
 
     link: 'https://damla-group.com/',
 
     description:
-      'Corporate website developed for Damla Group showcasing company services, projects, and corporate information with a modern responsive interface.',
+      'Corporate website built end to end: a public marketing site plus a Django backend running the blog, careers, and contact features.',
+
+    features: [
+      '9 pages built from about 20 reusable components',
+      'Per-route SEO meta tags (Open Graph, Twitter cards, canonicals) managed through a custom hook',
+      'Blog with tags, filtering, search, and pagination',
+      'Job application and contact submission endpoints'
+    ],
 
     contributions: [
-      'Designed and developed responsive frontend architecture',
-      'Implemented modern UI/UX focused on corporate branding and usability',
-      'Optimized page loading performance and SEO-friendly structure',
-      'Ensured cross-device responsiveness for desktop, tablet, and mobile users'
+      'Developed a responsive React 19 + TypeScript frontend with Vite and Ant Design',
+      'Built a Django REST Framework API on PostgreSQL for blog posts, job applications, and contact submissions',
+      'Set up a Django Admin panel with a CKEditor 5 rich-text editor so non-technical staff publish on their own, with media on AWS S3',
+      'Containerized the backend with Docker, Gunicorn, and WhiteNoise'
+    ],
+
+    tech: [
+      'React 19',
+      'TypeScript',
+      'Vite',
+      'Ant Design',
+      'Django',
+      'Django REST Framework',
+      'PostgreSQL',
+      'AWS S3',
+      'Docker'
+    ]
+  },
+
+  {
+    name: 'Energy Service Group',
+    subtitle: 'Corporate Website',
+
+    description:
+      'Responsive corporate website for an Azerbaijani energy services company, showcasing its projects, partners, certifications, and licenses.',
+
+    features: [
+      'Project portfolio with detail pages',
+      'Filterable photo and video gallery',
+      'Contact form',
+      'Scroll-triggered reveal and counter animations'
+    ],
+
+    contributions: [
+      'Designed and built the website with React, TypeScript, Vite, and React Router',
+      'Created a reusable component library and a CSS design-token system (CSS Modules) to keep the visual language consistent'
     ],
 
     tech: [
       'React',
       'TypeScript',
-      'Responsive Design',
-      'SEO Optimization',
-      'Modern CSS'
+      'Vite',
+      'React Router',
+      'CSS Modules'
     ]
   },
 
@@ -334,33 +438,95 @@ const projects: ProjectItem[] = [
 
 const skills: SkillGroup[] = [
   {
-    icon: FiCode, 
-    category: 'Frontend Engineering',
+    icon: FiCode,
+    category: 'Languages',
     items: [
-      'React',
       'TypeScript',
       'JavaScript (ES6+)',
+      'Python',
+      'SQL',
+      'HTML5',
+      'CSS3',
+      'C/C++',
+      'C# (basic)'
+    ]
+  },
+
+  {
+    icon: FiMonitor,
+    category: 'Frontend',
+    items: [
+      'React 19',
+      'Next.js (SSR/ISR)',
+      'Vite',
+      'React Router',
       'Redux Toolkit',
       'TanStack Query',
       'TanStack Table',
-      'Ant Design',
-      'Material UI',
-      'Tailwind CSS',
-      'Vue.js'
+      'Context API',
+      'Custom Hooks',
+      'Vue.js (basic)'
     ]
   },
 
   {
     icon: FiLayers,
-    category: 'Frontend Architecture',
+    category: 'UI & Design Systems',
     items: [
-      'Component Architecture',
-      'Reusable UI Systems',
-      'Custom Hooks',
-      'Context API',
-      'State Management Patterns',
-      'Code Splitting',
-      'Lazy Loading'
+      'Ant Design',
+      'MUI',
+      'Tailwind CSS',
+      'CSS Modules',
+      'Storybook',
+      'npm Component Libraries',
+      'Design Tokens',
+      'Charts'
+    ]
+  },
+
+  {
+    icon: FiTerminal,
+    category: 'Backend & APIs',
+    items: [
+      'Node.js',
+      'Express',
+      'Django',
+      'Django REST Framework',
+      'Wagtail CMS',
+      'REST',
+      'OpenAPI / Swagger',
+      'JWT Auth',
+      'RBAC / Permissions'
+    ]
+  },
+
+  {
+    icon: FiDatabase,
+    category: 'Databases & Storage',
+    items: [
+      'PostgreSQL',
+      'MySQL',
+      'Redis',
+      'Django ORM',
+      'Full-Text Search',
+      'AWS S3',
+      'S3-Compatible Storage'
+    ]
+  },
+
+  {
+    icon: FiServer,
+    category: 'DevOps & Deployment',
+    items: [
+      'Docker',
+      'Docker Compose',
+      'Multi-Stage Builds',
+      'Nginx',
+      'Gunicorn',
+      'TLS / Certbot',
+      'CI/CD',
+      'Linux',
+      'Git'
     ]
   },
 
@@ -373,55 +539,45 @@ const skills: SkillGroup[] = [
       'Cypress',
       'Playwright',
       'Puppeteer',
-      'Selenium'
+      'Selenium',
+      'Pytest',
+      'E2E Testing'
     ]
   },
 
   {
-    icon: FiTerminal,
-    category: 'Backend & APIs',
-    items: [
-      'Node.js',
-      'Express',
-      'REST APIs',
-      'Authentication',
-      'Database Integration'
-    ]
-  },
-
-  {
-    icon: FiDatabase,
-    category: 'Infrastructure & DevOps',
-    items: [
-      'Docker',
-      'CI/CD Pipelines',
-      'Nginx',
-      'Git',
-      'Linux CLI'
-    ]
-  },
-
-  {
-    category: 'Performance & Optimization',
     icon: FiZap,
+    category: 'Performance & SEO',
     items: [
-      'Web Vitals Optimization',
-      'Responsive Design',
-      'Cross-Browser Compatibility',
-      'Bundle Optimization',
-      'Rendering Performance'
+      'Core Web Vitals',
+      'Code Splitting',
+      'Lazy Loading',
+      'Caching & ISR',
+      'Technical SEO & JSON-LD',
+      'Accessibility',
+      'Cross-Browser'
     ]
   },
 
   {
-    category: 'Data & Machine Learning',
     icon: FiBarChart2,
+    category: 'Data & ML',
     items: [
-      'Python',
       'Pandas',
       'NumPy',
       'Scikit-learn',
-      'Time Series Analysis'
+      'Machine Learning Fundamentals'
+    ]
+  },
+
+  {
+    icon: FiUsers,
+    category: 'Leadership',
+    items: [
+      'Team Leadership (5 engineers)',
+      'Code Reviews',
+      'Technical Planning',
+      'Cross-Functional Collaboration'
     ]
   }
 ]
@@ -431,7 +587,7 @@ const education: EducationItem[] = [
     degree: 'MSc in Data Science',
     school: 'Azerbaijan State University of Economics (UNEC)',
     location: 'Baku, Azerbaijan',
-    period: '2025 – 2027 (Expected)',
+    period: '2025 – 2026 (Expected)',
 
     focus: [
       'Machine Learning',
@@ -446,23 +602,27 @@ const education: EducationItem[] = [
     degree: 'BSc in Computer Science',
     school: 'ADA University',
     location: 'Baku, Azerbaijan',
-    period: '2020 – 2025',
+    period: '2020 – 2024',
 
     honors: "Dean's List",
 
     focus: [
-      'Data Structures and Algorithms',
-      'Distributed Systems',
+      'Calculus',
+      'Data Structures & Algorithms',
       'Machine Learning',
+      'Artificial Intelligence',
+      'Digital Logic Design',
+      'Linear Algebra',
+      'Discrete Structures',
+      'Software Design Patterns',
       'Database Systems',
-      'Software Architecture',
-      'Web Development'
+      'Distributed Systems'
     ]
   }
 ]
 
 const languages: LanguageItem[] = [
-  { name: 'English', level: 'Advanced', pct: 90 },
+  { name: 'English', level: 'Advanced (C1)', pct: 90 },
   { name: 'Russian', level: 'Fluent', pct: 95 },
   { name: 'Turkish', level: 'Fluent', pct: 95 },
   { name: 'Azerbaijani', level: 'Native', pct: 100 },
@@ -728,9 +888,9 @@ function Main() {
               <p className={styles.tagline}>
                 <span className={styles.tagBracket}>[</span>
                 <FiCpu className={styles.inlineIcon} />
-                FRONTEND DEVELOPER
+                SENIOR FRONTEND ENGINEER
                 <span className={styles.tagDot}> // </span>
-                ~4 YEARS
+                5+ YEARS
                 <span className={styles.tagDot}> // </span>
                 <FiMapPin className={styles.inlineIcon} />
                 BAKU, AZERBAIJAN
