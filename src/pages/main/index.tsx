@@ -113,7 +113,7 @@ const experience: ExperienceItem[] = [
     role: 'Lead Frontend Developer',
     period: 'Nov 2025 – Present',
     company: 'Prodigitrack',
-    location: 'Baku, Azerbaijan',
+    location: 'Dover, Delaware, United States',
 
     summary:
       'Leading a team of 5 frontend engineers on an enterprise-grade B2B procurement platform, and designing, building, and deploying full-stack products end to end.',
@@ -139,7 +139,7 @@ const experience: ExperienceItem[] = [
     role: 'Frontend Developer',
     period: 'Aug 2024 – Oct 2025',
     company: 'Prodigitrack',
-    location: 'Baku, Azerbaijan',
+    location: 'Dover, Delaware, United States',
 
     summary:
       'Developed dynamic, responsive frontend interfaces for a B2B supply chain web application serving large enterprises.',
